@@ -1,0 +1,14 @@
+    setTimeout(function () {
+        var SlickCurrent = $('.slick-current');
+        SlickCurrent.prev().addClass('prev');
+        SlickCurrent.next().addClass('next');
+    }, 100);
+
+    $('.dj_slider_active').on('beforeChange', function () {
+        $('.slick-slide').removeClass('prev next');
+        setTimeout(function () {
+            var beforechange = $('.slick-current') ;
+            beforechange.prev().addClass('prev');
+            beforechange.next().addClass('next');
+        }, 100);
+    });
